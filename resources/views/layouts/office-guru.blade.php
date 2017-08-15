@@ -16,7 +16,7 @@
 	<link href="{{ asset('css/hamburgers.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
-<body class="{{$body_class}}">
+<body class="{{$body_class or ''}}">
 	<header>	
 		<div class="container group">
 			<div class="row">
@@ -24,7 +24,7 @@
 					<div class="menus group container">
 						<nav class="headernav">
 							<div class="headerlogo">
-								<h1 class="logo">{{ config('app.name', 'Laravel') }}<a href="index.php"><img src="img/logo.png" alt="Office Guru"></a></h1>
+								<h1 class="logo">{{ config('app.name', 'Laravel') }}<a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Office Guru"></a></h1>
 							</div>
 
 							<div id="headernav-menu" class="headernav-menu">	
