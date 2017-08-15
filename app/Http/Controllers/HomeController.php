@@ -23,8 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $body_class = 'page-home';
-        return view('home')
-            ->with('body_class', $body_class);
+        return view('home')->with('body_class', 'page-home');
     }
 }

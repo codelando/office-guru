@@ -5,7 +5,7 @@
     <section class="search">
         <div class="video-container">
             <video id="bgVideo" controls preload="true" autoplay loop muted>
-                <source src="img/office-bg.mp4" type="video/mp4" > 
+                <source src="{{ asset('img/office-bg.mp4') }}" type="video/mp4" > 
             </video>
         </div>
 
