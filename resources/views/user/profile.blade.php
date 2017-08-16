@@ -3,14 +3,12 @@
 @section('content')
 <section class="user-form">
     <div class="container">
-        <h2>Registrate ahora y empezá a trabajar desde donde quieras</h2>
-        <div class="legal-text">
-            <h4>¿Ya tenés cuenta? <a href="{{ route('login') }}">Iniciá Sesión</a></h4>
-        </div>
+        <h2>Perfil de usuario</h2>
 
         <div class="pad-left pad-right pad-half-top">
             <!--Empieza el form de registro -->
             <form class="form-register" method="POST" action="{{ route('user.profile') }}">
+            <input type="hidden" name="_method" value="PUT">
                 {{ csrf_field() }}
 
                 <div class="form-group">        
@@ -27,7 +25,7 @@
 
                 <div class="form-group">        
                     <label for="last_name">Apellido</label>
-                    <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $user->first_name or old('last_name') }}" required autofocus>
+                    <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $user->last_name or old('last_name') }}" required autofocus>
 
                     @if ($errors->has('last_name'))
                         <span class="help-block">
@@ -47,14 +45,8 @@
                     @endif
                 </div>
 
-                <input type="submit" class="btn btn-register" value="Registrarme">
+                <input type="submit" class="btn btn-register" value="Guardar Cambios">
 
-                <div class="legal-text">
-                    <!-- <label for="terms" class="terms">
-                        <input type="checkbox" id="newsletter" name="newsletter"> Me gustaría recibir cupones, promociones, encuestas y actualizaciones por correo electrónico sobre OfficeGuru y sus socios.
-                    </label> -->
-                    <p>Al hacer clic en Registrarme, acepto los <a href="#" target="_blank">términos y condiciones del servicio.</a></p>
-                </div>
             </form>
         </div>
     </div>

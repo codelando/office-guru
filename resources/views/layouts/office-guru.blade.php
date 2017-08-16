@@ -35,7 +35,7 @@
 										<li class="menu-item-login"><a href="{{ route('login') }}">Ingresá</a></li>
 			                        @else
 										<li class="menu-item-user">
-											<a href="profile.php">
+											<a href="{{ route('user.update') }}">
 												<img class="avatar avatar-sm" src="{{ Auth::user()->first_name }}" alt="{{ Auth::user()->first_name }}">
 												{{ Auth::user()->first_name }}
 											</a>
