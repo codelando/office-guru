@@ -7,7 +7,7 @@
 
         <div class="pad-left pad-right pad-half-top">
             <!--Empieza el form de registro -->
-            <form class="form-register" method="POST" action="{{ route('user.profile') }}">
+            <form class="form-register" method="POST" action="{{ route('user.profile') }}" enctype="multipart/form-data">
             <input type="hidden" name="_method" value="PUT">
                 {{ csrf_field() }}
 
@@ -25,11 +25,22 @@
 
                 <div class="form-group">        
                     <label for="last_name">Apellido</label>
-                    <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $user->last_name or old('last_name') }}" required autofocus>
+                    <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $user->last_name or old('last_name') }}" required>
 
                     @if ($errors->has('last_name'))
                         <span class="help-block">
                             <strong>{{ $errors->first('last_name') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+                <div class="form-group">        
+                    <label for="last_name">Imagen</label>
+                    <input id="image" type="file" class="form-control" name="image">
+
+                    @if ($errors->has('image'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('image') }}</strong>
                         </span>
                     @endif
                 </div>

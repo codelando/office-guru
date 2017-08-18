@@ -36,7 +36,7 @@
 			                        @else
 										<li class="menu-item-user">
 											<a href="{{ route('user.update') }}">
-												<img class="avatar avatar-sm" src="{{ Auth::user()->first_name }}" alt="{{ Auth::user()->first_name }}">
+												<img class="avatar avatar-sm" src="/storage/user/image/{{ Auth::user()->image }}" alt="{{ Auth::user()->first_name }}">
 												{{ Auth::user()->first_name }}
 											</a>
 										</li>
