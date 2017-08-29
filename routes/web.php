@@ -19,5 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/location/search', 'LocationController@search')->name('location.search');
+
 Route::get('/user/profile', 'UserController@profile')->name('user.profile')->middleware('auth');
 Route::put('/user/profile', 'UserController@update')->name('user.update')->middleware('auth');
