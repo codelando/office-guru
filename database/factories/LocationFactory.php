@@ -10,5 +10,7 @@ $factory->define(App\Location::class, function (Faker\Generator $faker) {
         'longitude' => $faker->randomFloat(6, $min = -34.629177, $max = -34.583809),
         'image' => 'office-' . $faker->numberBetween(1, 3) . '.jpg',
         'website' => $faker->domainName,
+        'rating_qty' => $faker->numberBetween(0,200),
+        'rating_avg' => $faker->numberBetween(0,10),
     ];
 });
