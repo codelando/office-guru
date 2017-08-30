@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->with('body_class', 'page-home');
+        $locations = \App\Location::paginate(8);
+        return view('home')
+            ->with('body_class', 'page-home')
+            ->with('locations', $locations);
     }
 }
