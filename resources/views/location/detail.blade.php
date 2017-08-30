@@ -22,16 +22,20 @@
                         <p>{{ $location->address }}</p>
                         <p>{{ $location->description }}</p>
                         <ul class="stars">
-                        <?php /*
-                            <?php $fullStars = floor($location['rating'] / 2); ?>
-                            @for ($j = $fullStars; $j >= 1 ; $j--)
-                                <li><i class="icon-star"></i></li>
-                            @endfor
-                            @if (($location['rating'] - $fullStars * 2) >= .5)
-                            <li><i class="icon-star-half"></i></li>
-                            @endif
-                            <li>{{ $location['ratingCount'] > 0 ? $location['ratingCount'] . ' evaluaciones': 'Se el primero en evaluarla'}} </li>
-                        */ ?>
+                                <?php $fullStars = floor($location->rating_avg / 2) ?>
+                                @for ($j = $fullStars; $j >= 1 ; $j--)
+                                    <li><i class="icon-star"></i></li>
+                                @endfor
+                                @if (($location->rating_avg - $fullStars * 2) >= .5)
+                                <li><i class="icon-star-half"></i></li>
+                                @endif
+                                <li>
+                                    @if ($location->rating_qty > 0)
+                                    {{ $location->rating_qty . ' evaluaciones' }}
+                                    @else 
+                                    {{ 'Se el primero en evaluarla' }} 
+                                    @endif
+                                </li>
                         </ul>
                     </article>
                 </div>
