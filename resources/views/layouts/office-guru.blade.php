@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Office Gurú') }}</title>
 
     <!-- Styles -->
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -25,7 +25,7 @@
 					<div class="menus group container">
 						<nav class="headernav">
 							<div class="headerlogo">
-								<h1 class="logo">{{ config('app.name', 'Laravel') }}<a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Office Guru"></a></h1>
+								<h1 class="logo">{{ config('app.name', 'Office Gurú') }}<a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Office Guru"></a></h1>
 							</div>
 
 							<div id="headernav-menu" class="headernav-menu">
@@ -80,7 +80,7 @@
 							<ul>
 								<li><a href="{{ route('home') }}">Inicio</a></li>
 								<li><a href="{{ route('faq') }}">FAQ</a></li>
-								@if (!Auth::guest())
+								@if (Auth::guest())
 									<li><a href="{{ route('register') }}">Regístrate</a></li>
 									<li><a href="{{ route('login') }}">Iniciar sesión</a></li>
 								@endif
