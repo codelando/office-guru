@@ -52,10 +52,10 @@
                             <ul class="stars">
                                 <?php $fullStars = floor($location->rating_avg / 2) ?>
                                 @for ($j = $fullStars; $j >= 1 ; $j--)
-                                    <li><i class="icon-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
                                 @endfor
                                 @if (($location->rating_avg - $fullStars * 2) >= .5)
-                                <li><i class="icon-star-half"></i></li>
+                                <li><i class="fa fa-star-half"></i></li>
                                 @endif
                                 <li>
                                     @if ($location->rating_qty > 0)

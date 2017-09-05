@@ -45,7 +45,6 @@
 *:after, 
 *:before {
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
   /* Transiciones de medio segundo para todos los efectos
    * https://css-tricks.com/almanac/properties/t/transition/ */
   /* transition: all 0.5s ease-out; */
@@ -54,6 +53,7 @@
 body { 
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 
@@ -76,8 +76,12 @@ ul li { list-style-type: none; }
 /**
  * Fuente para iconos 
  * http://fontello.com/
+ *
+ * Reemplazado por FontAwezome
+ * http://fontawezome.io/
  */
 
+/*
 @font-face {
   font-family: 'fontello';
   src: url('../fonts/fontello.eot?39905452');
@@ -101,14 +105,11 @@ ul li { list-style-type: none; }
   text-decoration: inherit;
   speak: none;
   
-  /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
 
-  /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
 
-  /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -145,7 +146,7 @@ ul li { list-style-type: none; }
     transform: rotate(359deg);
   }
 }
-
+*/
 
 /* Forms */ /* ************************** Revisar ******************** */
 

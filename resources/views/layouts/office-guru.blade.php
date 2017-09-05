@@ -14,6 +14,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/hamburgers.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body class="{{$body_class or ''}}">
@@ -27,7 +28,7 @@
 								<h1 class="logo">{{ config('app.name', 'Laravel') }}<a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Office Guru"></a></h1>
 							</div>
 
-							<div id="headernav-menu" class="headernav-menu">	
+							<div id="headernav-menu" class="headernav-menu">
 								<ul>
 									<li class="menu-item-faq"><a href="faq.php">FAQ</a></li>
 									@if (Auth::guest())
@@ -43,7 +44,7 @@
 										<li class="menu-item-user">
 											<a href="{{ route('logout') }}" 
 												onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-												<i class="icon-lock"></i> Salir
+												<i class="fa fa-lock"></i> Salir
 											</a>
                                          </li>
 			                        @endif
@@ -96,10 +97,10 @@
 					<div class="col-lg-12 txt-center w-100">
 						<nav class="menu-social d-inlineblock">
 							<ul>
-								<li><a href="https://facebook.com" target="_blank"><i class="icon-facebook"></i></a></li>
-								<li><a href="https://twitter.com" target="_blank"><i class="icon-twitter"></i></a></li>
-								<li><a href="https://linkedin.com" target="_blank"><i class="icon-linkedin"></i></a></li>
-								<li><a href="https://instagram.com" target="_blank"><i class="icon-instagram"></i></a></li>
+								<li><a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="https://linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
 							</ul>
 						</nav>
 					</div>
