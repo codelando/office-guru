@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home'); /* Alias */
+Route::get('/home', function() { return redirect()->route('home'); }); /* Redirect */
 
 Route::get('/location/search', 'LocationController@search')->name('location.search');
 Route::get('/location/detail/{id}', 'LocationController@detail')->name('location.detail');
