@@ -18,8 +18,13 @@ Route::get('/', 'HomeController@index')->name('home');
 //Route::get('/home', 'HomeController@index')->name('home'); /* Alias */
 Route::get('/home', function() { return redirect()->route('home'); }); /* Redirect */
 
+Route::get('/faq', 'HomeController@faq')->name('faq');
+//Route::get('/faq', function () { return view('faq'); })->name('faq');
+
+
 Route::get('/location/search', 'LocationController@search')->name('location.search');
 Route::get('/location/detail/{id}', 'LocationController@detail')->name('location.detail');
 
 Route::get('/user/profile', 'UserController@profile')->name('user.profile')->middleware('auth');
 Route::put('/user/profile', 'UserController@update')->name('user.update')->middleware('auth');
+

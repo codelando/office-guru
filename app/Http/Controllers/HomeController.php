@@ -28,4 +28,14 @@ class HomeController extends Controller
             ->with('body_class', 'page-home')
             ->with('locations', $locations);
     }
+
+    public function faq()
+    {
+        $locations = \App\Location::paginate(4);
+        return view('faq')
+            ->with('body_class', 'faq')
+            ->with('locations', $locations);
+    }
+
+
 }

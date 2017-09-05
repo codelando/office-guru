@@ -30,7 +30,7 @@
 
 							<div id="headernav-menu" class="headernav-menu">
 								<ul>
-									<li class="menu-item-faq"><a href="faq.php">FAQ</a></li>
+									<li class="menu-item-faq"><a href="{{ route('faq') }}">FAQ</a></li>
 									@if (Auth::guest())
 										<li class="menu-item-register"><a href="{{ route('register') }}">Registrate</a></li>
 										<li class="menu-item-login"><a href="{{ route('login') }}">Ingresá</a></li>
@@ -78,8 +78,8 @@
 					<div class="col-lg-12 txt-center w-100">
 						<nav class="footernav-menu d-inlineblock">
 							<ul>
-								<li><a href="index.php">Inicio</a></li>
-								<li><a href="faq.php">Preguntas</a></li>
+								<li><a href="{{ route('home') }}">Inicio</a></li>
+								<li><a href="{{ route('faq') }}">FAQ</a></li>
 								@if (!Auth::guest())
 									<li><a href="{{ route('register') }}">Regístrate</a></li>
 									<li><a href="{{ route('login') }}">Iniciar sesión</a></li>
