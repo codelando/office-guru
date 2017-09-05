@@ -23,6 +23,10 @@ class LocationController extends Controller
      */
     public function detail($id) {
     	$location = \App\Location::find($id);
-        return view('location.detail')->with('location', $location);
+        $googleAppKey = env('GOOGLE_APP_KEY', '');
+        
+        return view('location.detail')
+            ->with('location', $location)
+            ->with('googleAppKey', $googleAppKey);
     }
 }
