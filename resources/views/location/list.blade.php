@@ -38,7 +38,14 @@
                     <div class="col-sm-6 col-md-4 col-lg-3">
                         <article class="office">
                             <img src="/img/locations/{{ $location->image }}" alt="{{ $location->title }}">
-                            <p>
+                            <?php 
+                                $fullStars = floor($location->rating_avg / 2);
+                                $starsText = 'Se el primero en evaluarla'; 
+                                if ($location->rating_qty > 0) {
+                                    $starsText = $location->rating_qty . ' evaluaciones';
+                                }
+                            ?>
+                            <p class="office-name">
                                 <strong>{{ $location->name }}</strong>
                                 <span class="services">
                                     <?php /*
@@ -48,23 +55,15 @@
                                     */ ?>
                                 </span>
                             </p>
-                            <p>{{ $location->name }}</p>
-                            <ul class="stars">
-                                <?php $fullStars = floor($location->rating_avg / 2) ?>
-                                @for ($j = $fullStars; $j >= 1 ; $j--)
-                                    <li><i class="fa fa-star"></i></li>
-                                @endfor
-                                @if (($location->rating_avg - $fullStars * 2) >= .5)
-                                <li><i class="fa fa-star-half"></i></li>
-                                @endif
-                                <li>
-                                    @if ($location->rating_qty > 0)
-                                    {{ $location->rating_qty . ' evaluaciones' }}
-                                    @else 
-                                    {{ 'Se el primero en evaluarla' }} 
+                            <p class="office-address">{{ $location->address }}</p>
+                                <ul class="stars" title="{{ $starsText }}">
+                                    @for ($j = $fullStars; $j >= 1 ; $j--)
+                                        <li><i class="fa fa-star"></i></li>
+                                    @endfor
+                                    @if (($location->rating_avg - $fullStars * 2) >= .5)
+                                    <li><i class="fa fa-star-half"></i></li>
                                     @endif
-                                </li>
-                            </ul>
+                                </ul>
                         </article>
                     </div>
                 </a>
