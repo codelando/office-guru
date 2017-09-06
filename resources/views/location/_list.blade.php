@@ -42,7 +42,6 @@
                         @else 
                         {{ 'Se el primero en evaluarla' }} 
                         @endif
-                        ({{ $location->rating_avg }})
                     </li>
                 </ul>
             </article>

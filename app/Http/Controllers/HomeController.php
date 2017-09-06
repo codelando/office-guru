@@ -31,7 +31,7 @@ class HomeController extends Controller
 
     public function faq()
     {
-        $locations = \App\Location::paginate(3);
+        $locations = \App\Location::paginate(6);
         return view('faq')
             ->with('body_class', 'faq')
             ->with('locations', $locations);
