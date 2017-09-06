@@ -31,7 +31,9 @@
     <section class="offices pad-top">
         <div class="container">
             <h2>Oficinas destacadas</h2>
+
             @include('location._list')
+            
         </div>
     </section>  
 </main>

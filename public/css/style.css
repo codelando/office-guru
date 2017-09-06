@@ -335,6 +335,7 @@ nav ul {
 /* Pagination */
 
 ul.pagination {
+  margin-top: 36px;
   padding: 0;
   text-align: center; 
 }
@@ -396,17 +397,16 @@ ul.stars { padding: 0; }
 ul.stars li {
   float: left;
   list-style-type: none;
+  padding-right: 3px;
 }
 ul.stars li i { color: tomato; }
 
 /* Office list */
 
 section.offices { background-color: white; }
-.office-list {
-  margin-bottom: 20px;
-}
+.office-list {}
   .office-list .office {
-    margin: 24px 0;
+    margin-top: 36px;
   }
 
   .office-list .office img {

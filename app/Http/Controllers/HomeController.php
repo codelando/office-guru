@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $locations = \App\Location::paginate(8);
+        $locations = \App\Location::paginate(6);
         return view('home')
             ->with('body_class', 'page-home')
             ->with('locations', $locations);
@@ -31,7 +31,7 @@ class HomeController extends Controller
 
     public function faq()
     {
-        $locations = \App\Location::paginate(4);
+        $locations = \App\Location::paginate(3);
         return view('faq')
             ->with('body_class', 'faq')
             ->with('locations', $locations);
