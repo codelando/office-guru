@@ -111,7 +111,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 imgfooter">
-						<img src="img/logo-1.png" alt="Office Guru">
+						<img src="{{ asset('img/logo-white.png') }}" alt="Office Guru">
 					</div>
 				</div>
 			</div>

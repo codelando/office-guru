@@ -409,9 +409,18 @@ section.offices { background-color: white; }
     margin-top: 36px;
   }
 
+  .office-list .office .office-img {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+  }
+
   .office-list .office img {
-    display: block;
-    width: 100%;
+    position: absolute;
+    height: 100%;
+    left: -100%;
+    right: -100%;
+    margin: 0 auto;
   }
 
   .office-list .office p .services { float: right }
@@ -421,6 +430,23 @@ section.offices { background-color: white; }
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+section.office {}
+section.office .office-img {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+  section.office .office-img img {
+    position: absolute;
+    width: 100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto 0;
+  }
+
+  section.office .office-map { margin-top: 24px; }
+  
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    Pages
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -450,7 +476,8 @@ header h1 img {
   margin: 12px 0 0;
 }
 
-main { padding: 36px 0; }
+main { margin: 0 0 36px; }
+
 
 /* Mobile menú */
 /* .header-static */

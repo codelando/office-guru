@@ -3,7 +3,9 @@
     <a href="{{ route('location.detail', $location->id) }}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <article class="office">
-                <img src="/img/locations/{{ $location->image }}" alt="{{ $location->title }}">
+                <div class="office-img">
+                    <img src="/img/locations/{{ $location->image }}" alt="{{ $location->title }}">
+                </div>
                 <?php 
                     $fullStars = floor($location->rating_avg / 2);
                 ?>
