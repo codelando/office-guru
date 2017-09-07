@@ -23,6 +23,7 @@ Route::get('/faq', 'HomeController@faq')->name('faq');
 
 
 Route::get('/location/search', 'LocationController@search')->name('location.search');
+Route::get('/location/markers', 'LocationController@markers')->name('location.markers');
 Route::get('/location/detail/{id}', 'LocationController@detail')->name('location.detail');
 
 Route::get('/user/profile', 'UserController@profile')->name('user.profile')->middleware('auth');

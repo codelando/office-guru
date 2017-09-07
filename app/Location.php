@@ -20,4 +20,11 @@ class Location extends Model
         return $this->belongsToMany('App\Service')
             ->withTimestamps();
     }
+
+    public function markers($latitude, $longitude, $radius)
+    {
+        return \DB::select('
+            SELECT *, ( 6371 * acos( cos( radians(' . $latitude . ') ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(' . $longitude . ') ) + sin( radians( ' . $latitude . ' ) ) * sin( radians( latitude ) ) ) ) AS distance FROM locations  ORDER BY distance LIMIT 0 , 20;
+        ');
+    }
 }
