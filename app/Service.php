@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class Service extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,12 +12,12 @@ class Location extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'address', 'latitude', 'longitude', 'image', 'website',
+        'name', 'description', 'icon',
     ];
 
-    public function services()
+    public function locations()
     {
-        return $this->belongsToMany('App\Service')
+        return $this->belongsToMany('App\Location')
             ->withTimestamps();
     }
 }

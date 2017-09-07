@@ -36,31 +36,35 @@
                             
                             <p>
                                 <strong>{{ $location->name }}</strong>
-                                <span class="services">
-                                    <?php /*
-                                    @foreach ($location['services'] as $icon => $desc)
-                                    <i class="{{ $icon }}" title="{{ $desc }}"></i>
-                                    @endforeach
-                                    */ ?>
-                                </span>
                             </p>
                             <p>{{ $location->address }}</p>
                             <p>{{ $location->description }}</p>
+
+                            @if ($location->services->count() > 0)
+                                <div class="services group">
+                                    @foreach ($location->services as $service)
+                                    <div class="col-2">
+                                        <i class="fa fa-{{ $service->icon }}" ></i>
+                                    <span>{{ $service->name }}</span>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            @endif
                             <ul class="stars">
-                                    <?php $fullStars = floor($location->rating_avg / 2) ?>
-                                    @for ($j = $fullStars; $j >= 1 ; $j--)
-                                        <li><i class="fa fa-star"></i></li>
-                                    @endfor
-                                    @if (($location->rating_avg - $fullStars * 2) >= .5)
-                                    <li><i class="fa fa-star-half"></i></li>
+                                <?php $fullStars = floor($location->rating_avg / 2) ?>
+                                @for ($j = $fullStars; $j >= 1 ; $j--)
+                                    <li><i class="fa fa-star"></i></li>
+                                @endfor
+                                @if (($location->rating_avg - $fullStars * 2) >= .5)
+                                <li><i class="fa fa-star-half"></i></li>
+                                @endif
+                                <li>
+                                    @if ($location->rating_qty > 0)
+                                    {{ $location->rating_qty . ' evaluaciones' }}
+                                    @else 
+                                    {{ 'Se el primero en evaluarla' }} 
                                     @endif
-                                    <li>
-                                        @if ($location->rating_qty > 0)
-                                        {{ $location->rating_qty . ' evaluaciones' }}
-                                        @else 
-                                        {{ 'Se el primero en evaluarla' }} 
-                                        @endif
-                                    </li>
+                                </li>
                             </ul>
                         </div>
                     </article>
