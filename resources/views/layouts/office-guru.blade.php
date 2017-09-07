@@ -119,7 +119,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<p class="copy">&copy; Copyright <?php echo date('Y'); ?> <em>Escuchame chiquito</em>, todos los derechos reservados. {{ asset('js/site.js') }}</p>
+						<p class="copy">&copy; Copyright <?php echo date('Y'); ?> <em>Escuchame chiquito</em>, todos los derechos reservados.</p>
 					</div>
 				</div>
 			</div>
