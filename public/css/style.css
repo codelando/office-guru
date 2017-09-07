@@ -462,16 +462,16 @@ main { padding: 36px 0; }
   top: 0;
   left: 0; /* Como position es fixed / absolute, necesitamos right y left en 0 para que ocupe todo el ancho*/
   right: 0;
-  height: 80px;
   z-index: 100;
   background-color: #fff;
   box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+  padding: 0;
 }
 
 .menu-mobile {
-  width: 35px;
   float: right;
   margin: 20px;
+  outline: 0;
 }
 
 /*.header-main nav*/
@@ -487,11 +487,26 @@ main { padding: 36px 0; }
   top: 80px;
   left: 0;
   right: 0;
-  max-height: 100px;
   overflow: hidden;
   visibility: hidden;
   background-color: #fff;
+  padding: 0 20px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.5);
  }
+
+.headernav-menu ul li {
+  border-top: 1px solid #d8d8d8;
+}
+
+.headernav-menu ul li a{
+  display: block;
+  padding: 30px
+}
+
+.headernav-menu ul li:nth-child(1) {
+  border:none;
+}
+
 
 .is-visible {
  visibility: visible;
@@ -529,32 +544,40 @@ main { padding: 36px 0; }
     margin-left: 14px;
   }
 
-  .headernav-menu {
+ .headernav-menu {
     position: static;
     top: auto;
     left: auto;
     right: auto;
     max-height: 0;
     overflow: visible;
-    visibility: visible;
-
+    visibility: visible!important;
     display: inline-block;
     float: right;
     margin-top: 20px;
   }
 
 
+.headernav-menu ul li:nth-child(1) {
+  padding: 0;
+  border:none;
+}
+
+
   .headernav-menu ul li{
     float: left;
+    padding:0;
+    border-top: none;
   }
 
   .headernav-menu ul li a {
-    padding-bottom: 6px;
+    padding: 0 0 6px 0;
     margin: 10px 12px;
     font-size: 14px;
     line-height: 28px;
     font-weight: bold;
     transition: 0.3s;
+    display: inline;
   }
 
   .headernav-menu ul li a:hover { 

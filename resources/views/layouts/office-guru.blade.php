@@ -28,7 +28,7 @@
 								<h1 class="logo">{{ config('app.name', 'Office Gurú') }}<a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Office Guru"></a></h1>
 							</div>
 
-							<div id="headernav-menu" class="headernav-menu">
+							<div id="headernav-menu" class="headernav-menu" style="visibility: hidden">
 								<ul>
 									<li class="menu-item-faq"><a href="{{ route('faq') }}">FAQ</a></li>
 									@if (Auth::guest())
@@ -65,7 +65,6 @@
 			</div>
 		</div>
 
-		<script type="text/javascript" src="js/example.js"></script>
 
 	</header>
 	<main>
@@ -120,11 +119,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<p class="copy">&copy; Copyright <?php echo date('Y'); ?> <em>Escuchame chiquito</em>, todos los derechos reservados.</p>
+						<p class="copy">&copy; Copyright <?php echo date('Y'); ?> <em>Escuchame chiquito</em>, todos los derechos reservados. {{ asset('js/site.js') }}</p>
 					</div>
 				</div>
 			</div>
-		</section>	
-	</footer>
+		</section> 	</footer>
+
+	<script type="text/javascript" src="{{ asset('js/site.js') }}"></script>
 </body>
 </html>
