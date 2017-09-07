@@ -18,7 +18,7 @@
                     @if ($location->services->count() > 0)
                         <div class="services group">
                             @foreach ($location->services as $service)
-                            <div class="col-2">
+                            <div class="col-3">
                                 <i class="fa fa-{{ $service->icon }}" ></i>
                             <span>{{ $service->name }}</span>
                             </div>
