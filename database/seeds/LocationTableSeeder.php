@@ -11,6 +11,14 @@ class LocationTableSeeder extends Seeder
      */
     public function run()
     {
-        $locations = factory(App\Location::class, 10)->create();
-    }
+    	$services = App\Service::all();
+
+        factory(App\Location::class, 30)
+        	->create()
+        	->each(function($location) use ($services) {
+        		$location->services()->attach(
+        			$services->random(rand(1, 10))->pluck('id')->toArray()
+    			);
+			});
+	}
 }
