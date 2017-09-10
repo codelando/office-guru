@@ -12,7 +12,7 @@ class LocationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function search() {
+    public function search(Request $request) {
     	$locations = \App\Location::paginate(12);
         return view('location.list')->with('locations', $locations);
     }
@@ -39,24 +39,6 @@ class LocationController extends Controller
         $locations =  new \App\Location;
         $locations = $locations->markers($latitude, $longitude, $radius);
 
-        // Start XML file, create parent node
-        $dom = new \DOMDocument("1.0");
-        $node = $dom->createElement("markers");
-        $parnode = $dom->appendChild($node);
-
-        header("Content-type: text/xml");
-        // Iterate through the rows, adding XML nodes for each
-        foreach ($locations as $location) {
-            $node = $dom->createElement("marker");
-            $newnode = $parnode->appendChild($node);
-            $newnode->setAttribute("id", $location->id);
-            $newnode->setAttribute("name", $location->name);
-            $newnode->setAttribute("address", $location->address);
-            $newnode->setAttribute("lat", $location->latitude);
-            $newnode->setAttribute("lng", $location->longitude);
-            $newnode->setAttribute("distance", $location->distance);
-        }
-        echo $dom->saveXML();
-
+        return response()->json($locations);
     }
 }
