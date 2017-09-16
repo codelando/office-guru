@@ -17,18 +17,10 @@ class LocationController extends Controller
         return view('location.list')->with('locations', $locations);
     }
 
-	/**
-     * Show office list.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function detail($id) {
-    	$location = \App\Location::find($id);
+    public function detail(Location $location) {
         $googleAppKey = env('GOOGLE_APP_KEY', '');
         
-        return view('location.detail')
-            ->with('location', $location)
-            ->with('googleAppKey', $googleAppKey);
+        return view('location.detail', compact('location', 'googleAppKey'));
     }
 
     public function markers(Request $request) {

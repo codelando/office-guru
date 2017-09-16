@@ -25,12 +25,12 @@
 					<div class="menus group container">
 						<nav class="headernav">
 							<div class="headerlogo">
-								<h1 class="logo">{{ config('app.name', 'Office Gurú') }}<a href="{{ route('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Office Guru"></a></h1>
+								<h1 class="logo">{{ config('app.name', 'Office Gurú') }}<a href="{{ route('page.home') }}"><img src="{{ asset('img/logo.png') }}" alt="Office Guru"></a></h1>
 							</div>
 
 							<div id="headernav-menu" class="headernav-menu" style="visibility: hidden">
 								<ul>
-									<li class="menu-item-faq"><a href="{{ route('faq') }}">FAQ</a></li>
+									<li class="menu-item-faq"><a href="{{ route('page.faq') }}">FAQ</a></li>
 									@if (Auth::guest())
 										<li class="menu-item-register"><a href="{{ route('register') }}">Registrate</a></li>
 										<li class="menu-item-login"><a href="{{ route('login') }}">Ingresá</a></li>
@@ -77,8 +77,8 @@
 					<div class="col-lg-12 txt-center w-100">
 						<nav class="footernav-menu d-inlineblock">
 							<ul>
-								<li><a href="{{ route('home') }}">Inicio</a></li>
-								<li><a href="{{ route('faq') }}">FAQ</a></li>
+								<li><a href="{{ route('page.home') }}">Inicio</a></li>
+								<li><a href="{{ route('page.faq') }}">FAQ</a></li>
 								@if (Auth::guest())
 									<li><a href="{{ route('register') }}">Regístrate</a></li>
 									<li><a href="{{ route('login') }}">Iniciar sesión</a></li>
