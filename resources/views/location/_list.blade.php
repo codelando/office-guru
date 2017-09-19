@@ -1,6 +1,6 @@
 <div class="row office-list">
     @forelse ($locations as $location)
-    <a href="{{ route('location.detail', $location->id) }}">
+    <a href="{{ route('location.show', $location->id) }}">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <article class="office">
                 <div class="office-img">
