@@ -93,10 +93,10 @@
                      });
                    }
 
-                    function drawLocations(json) {
-                        var location = json;
-                        if (typeof json !== 'object') {
-                            locations = JSON.parse(json);
+                    function drawLocations(locations) {
+
+                        if (typeof locations !== 'object') {
+                            locations = JSON.parse(locations);
                         }
                         var bounds = new google.maps.LatLngBounds();
                         locations.forEach(function (location, index) {
@@ -106,7 +106,7 @@
                             );
 
                             createOption(location.name, location.distance, index);
-                            createMarker(latlng, location.name);
+                            createMarker(latlng, location.name, location.address);
                             bounds.extend(latlng);
                         });
 
@@ -156,8 +156,11 @@
 
                    function doNothing() {}
 
-                   locations = {!! $locations->toJson() !!};
-                   window.onload = drawLocations(locations.data);
+
+                    window.onload = function() {
+                        locations = {!! $locations->toJson() !!};
+                        drawLocations(locations.data);
+                    };
                 </script>
                 <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_APP_KEY') }}&callback=initMap">
