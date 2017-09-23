@@ -31,13 +31,16 @@ Route::get('/faq', 'PageController@faq')->name('page.faq');
 
 Route::get('/location', 'LocationController@index')->name('location.index');
 
+Route::post('/location', 'LocationController@store')->name('location.store');
+
 Route::get('/location/create', 'LocationController@create')->name('location.create');
 
-Route::post('/location', 'LocationController@store')->name('location.store');
+Route::get('/location/markers', 'LocationController@markers')->name('location.markers');
 
 Route::get('/location/{location}', 'LocationController@show')->name('location.show');
 
-Route::get('/location/markers', 'LocationController@markers')->name('location.markers');
+Route::get('/location/{location}/edit', 'LocationController@edit')->name('location.edit');
+
 
 
 Route::get('/user/profile', 'UserController@profile')->name('user.profile')->middleware('auth');

@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="col-sm-12 col-md-6 col-lg-6">
                     <p>
-                        <strong>{{ $location->name }}</strong>
+                        <strong>{{ $location->name }} <a href="{{ route('location.edit', $location->id) }}"><i class="fa fa-pencil"></i></a></strong>
                     </p>
                     <p>{{ $location->address }}</p>
                     <p>{{ $location->description }}</p>
@@ -61,7 +61,7 @@
                         }
                     </script>
                     <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key={{ $googleAppKey }}&callback=initMap">
+                    src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_APP_KEY') }}&callback=initMap">
                     </script>
                 </div>
             </div>

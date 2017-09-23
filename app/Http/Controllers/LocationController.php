@@ -21,7 +21,8 @@ class LocationController extends Controller
     {
         //$locations = Location::latest()->get();
         $locations = Location::paginate(12);
-        return view('location.index')->with('locations', $locations);
+
+        return view('location.index', compact('locations'));
     }
 
     /**
@@ -80,10 +81,8 @@ class LocationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Location $location)
-    {
-        $googleAppKey = env('GOOGLE_APP_KEY', '');
-        
-        return view('location.show', compact('location', 'googleAppKey'));
+    {                
+        return view('location.show', compact('location'));
     }
 
     /**
@@ -93,8 +92,8 @@ class LocationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Location $location)
-    {
-        //
+    {        
+        return view('location.create', compact('location'));
     }
 
     /**
@@ -128,6 +127,6 @@ class LocationController extends Controller
         $locations =  new Location;
         $locations = $locations->markers($latitude, $longitude, $radius);
 
-        return response()->json($locations);
+        return $locations;
     }
 }
